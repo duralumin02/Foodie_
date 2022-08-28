@@ -89,17 +89,13 @@ let menuLists = [
 	},
 ];
 
-let card = document.querySelectorAll('.card');
-
+let menuRow = document.querySelector('.menu-row');
 menuLists.forEach((menu) => {
-	card.forEach((c) => {
-		c.innerHTML = `
-			<img
-				class="img mx-auto mt-4 mb-3"
-				src="${menu.img}"
-				width="160px"
-				alt=""
-			/>
+	let div = document.createElement('div');
+	div.classList.add('col-8', 'col-md-4', 'col-lg-3');
+	div.innerHTML = `
+		<div class="card dish rounded-3 mb-4 slide-down">
+			<img class="img mx-auto mt-4 mb-3" src="${menu.img}" width="160px" alt="" />
 			<div class="card-body">
 				<p class="card-title fw-semibold fs-5 mb-0">${menu.title}</p>
 				<p class="card-text small">${menu.description}</p>
@@ -108,6 +104,8 @@ menuLists.forEach((menu) => {
 					<button class="btn btn-primary"><i class="bi bi-cart-plus"></i></button>
 				</div>
 			</div>
-		`;
-	});
+		</div>
+	`;
+
+	menuRow.append(div);
 });
