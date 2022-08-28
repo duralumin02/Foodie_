@@ -1,10 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 @import 'node_modules/bootstrap-icons/font/bootstrap-icons.css';
-@import "node_modules/animate.css";
+@import 'node_modules/animate.css';
+
+$primary: #0d7f2d;
 
 $font-family-sans-serif: 'Montserrat', sans-serif;
-@import "node_modules/bootstrap/scss/bootstrap";
+$navbar-nav-link-padding-x: 1.2rem;
 
+$btn-font-size-lg: 1rem;
+$btn-padding-x-lg: 1.4rem;
+$btn-border-radius-lg: 0.45rem;
 
+@import 'node_modules/bootstrap/scss/bootstrap';
 
+.nav-item.active {
+	background-color: $primary;
+	border-radius: 0.35rem;
+	transition: all 0.3s;
+	.nav-link {
+		color: #fff !important;
+	}
+}
+
+.brand-logo {
+	transition: transform 0.5s;
+}
+
+.site-navbar {
+	background-color: rgba(255, 255, 255, 0.9);
+	&:hover .brand-logo {
+		transform: rotate(340deg);
+	}
+	&:hover .nav-item.active {
+		transform: translateY(-3px);
+	}
+}
+
+#home,
+#menus,
+#apps,
+#contact {
+	margin-top: 80px;
+}
+
+.serve-title {
+	text-align: center;
+	margin-bottom: 5rem;
+}
+
+.services {
+	svg {
+		fill: $primary;
+	}
+}
+
+.dish {
+	transition: 0.25s;
+	&:hover {
+		transform: translateY(-10px) !important;
+		box-shadow: $box-shadow;
+	}
+	img {
+		transition: 0.4s;
+	}
+	&:hover img {
+		transform: rotate(40deg);
+	}
+}
+
+#apps {
+	margin-bottom: 10em;
+}
